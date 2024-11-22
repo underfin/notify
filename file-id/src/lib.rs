@@ -107,7 +107,7 @@ impl FileId {
 }
 
 /// Get the `FileId` for the file or directory at `path`
-#[cfg(target_family = "unix")]
+#[cfg(any(target_family = "unix", target_family = "wasm"))]
 pub fn get_file_id(path: impl AsRef<Path>) -> io::Result<FileId> {
     use std::os::unix::fs::MetadataExt;
 

@@ -111,7 +111,7 @@ impl FileIdCache for NoCache {
 }
 
 /// The recommended file ID cache implementation for the current platform
-#[cfg(any(target_os = "linux", target_os = "android", target_family = "wasm"))]
+#[cfg(any(target_os = "linux", target_os = "android"))]
 pub type RecommendedCache = NoCache;
 /// The recommended file ID cache implementation for the current platform
 #[cfg(not(any(target_os = "linux", target_os = "android")))]
