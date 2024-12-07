@@ -349,6 +349,12 @@ unsafe extern "system" fn handle_event(
             Some(ref watch_path) => *watch_path != path,
         };
 
+        println!(
+            "Event: path = `{}`, action = {:?} skip = {}",
+            path.display(),
+            (*cur_entry).Action,
+            skip
+        );
         if !skip {
             log::trace!(
                 "Event: path = `{}`, action = {:?}",
